@@ -1,36 +1,53 @@
 import React, { useState } from "react";
 
 const Content = () => {
-  const [text, setText] = useState("");
+  const [inputText, setInputText] = useState(""); // Stores raw input
+  const [formattedText, setFormattedText] = useState(""); // Stores formatted result
 
-  const formatText = () => {
-    const formatted = text
+  const formatText = (input) => {
+    return input
       .split("\n")
       .map((line) => `'${line.trim()}'`) // Trim whitespace and add quotes
       .join(",\n"); // Join with commas and newlines
-    setText(formatted);
   };
 
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(text);
+  const handleTextChange = (e) => {
+    const input = e.target.value;
+    setInputText(input); // Update raw input
+    setFormattedText(formatText(input)); // Update formatted text
   };
+
+  const handleCopyToClipboard = () => {
+    navigator.clipboard.writeText(formattedText); // Copy formatted text to clipboard
+    alert("Formatted text copied to clipboard!"); // Optional feedback
+  };
+
+  // Count the number of lines in the input text
+  const lineCount = inputText.trim().split("\n").filter(line => line.trim()).length;
 
   return (
-    <div>
-      <div className="flex items-center">
+    <div className="flex justify-evenly">
+      {/* Raw input textarea */}
       <textarea
-        className="w-[45%] h-[85vh] mx-4 text-sm rounded-lg p-2"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-        placeholder="input your list here.."
+        className="rounded-lg text-sm w-[45%] h-[85vh]"
+        value={inputText}
+        onChange={handleTextChange}
+        placeholder="Input list here.."
       />
-      <br />
-      <div className="flex flex-col gap-4">
-       <button onClick={formatText}>format Text</button>
-       <button onClick={copyToClipboard}>copy Text</button>
-      </div>
-      </div>
+      
+      {/* Label displaying line count */}
+      <label className="mt-2 text-sm">
+        TID Count: {lineCount}
+      </label>
 
+      {/* Formatted output textarea */}
+      <textarea
+        className="rounded-lg text-sm w-[45%] h-[85vh]"
+        value={formattedText}
+        readOnly // Make this textarea read-only
+        placeholder="Formatted result"
+        onClick={handleCopyToClipboard} // Copy text when clicked
+      />
     </div>
   );
 };

@@ -1,6 +1,6 @@
 {
-  "homepage": "https://PiSethSeam.github.io/easy-calculate",
-  "name": "easy-calculate",
+  "homepage": "https://PiSethSeam.github.io/dev-util",
+  "name": "dev-util",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -14,10 +14,9 @@ const App = () => {
   return (
     <div>
       <TopBar />
-      <div className='max-w-screen-md flex flex-col mx-auto items-center'>
-        <span id='catchFocus' className='invisible absolute'>op1</span>
-        <Content />
-      </div>
+        <div>
+          <Content />  
+        </div>
       <Footer className='max-sm:hidden' />
     </div>
   )
