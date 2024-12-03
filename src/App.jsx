@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import TopBar from "./components/TopBar"
-import Content from './components/Content'
+import Content from './components/Content2'
 import Footer from './components/Footer'
 
 const App = () => {
