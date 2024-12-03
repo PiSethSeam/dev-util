@@ -20,8 +20,8 @@ const Content = () => {
 
   const handleCopyToClipboard = () => {
     navigator.clipboard.writeText(formattedText); // Copy formatted text to clipboard
-    setNotification("Save!"); // Show notification
-    setTimeout(() => setNotification(""), 3000); // Clear notification after 3 seconds
+    setNotification("Copied successfully✔️"); // Show notification
+    setTimeout(() => setNotification(""), 1000); // Clear notification after 3 seconds
   };
 
   // Count the number of lines in the input text
@@ -31,7 +31,7 @@ const Content = () => {
     <div className="relative flex flex-col items-center">
       {/* Notification display */}
       {notification && (
-        <div className="absolute bg-green-100 text-green-800 p-4 rounded-md shadow-lg text-center w-[50%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div className="absolute p-4 rounded-md dark:light-mode dark-mode  text-center w-fit top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           {notification}
         </div>
       )}
@@ -39,23 +39,23 @@ const Content = () => {
       <div className="flex justify-evenly w-full">
         {/* Raw input textarea */}
         <textarea
-          className="rounded-lg text-sm w-[45%] h-[85vh] border border-gray-300"
+          className="rounded-lg text-sm w-[45%] h-[85vh]"
           value={inputText}
           onChange={handleTextChange}
-          placeholder="Input list here.."
+          placeholder="Input a list, separated by line breaks"
         />
         
         {/* Label displaying line count */}
-        <label className="mt-2 text-sm text-center">
-          Items Count: <br/>{lineCount}
+        <label className="mt-2 text-center">
+          Items Count: <p className="text-xl">{lineCount}</p>
         </label>
 
         {/* Formatted output textarea with hover effect */}
         <textarea
-          className="rounded-lg text-sm w-[45%] h-[85vh] border border-gray-300 cursor-pointer hover:border-blue-500 hover:shadow-md transition-all active:scale-105 duration-300"
+          className="rounded-lg text-sm w-[45%] h-[85vh] border border-transparent cursor-pointer hover:border-blue-500 hover:shadow-md transition-all active:scale-105 duration-300"
           value={formattedText}
           readOnly // Make this textarea read-only
-          placeholder="Formatted result"
+          placeholder="Result"
           onClick={handleCopyToClipboard} // Copy text when clicked
         />
       </div>
