@@ -26,11 +26,17 @@ const SuroundValueBySingleQuote = () => {
     setFormattedText(formatText(input)); // Update formatted text
   };
 
-  const handleCopyToClipboard = () => {
-    navigator.clipboard.writeText(formattedText); // Copy formatted text to clipboard
-    setNotification("Copied successfully✔️"); // Show notification
-    setTimeout(() => setNotification(""), 1000); // Clear notification after 3 seconds
-  };
+// Copy formatted text to clipboard and show notification
+const handleCopyToClipboard = () => {
+  if (formattedText && formattedText.trim() !== "") {
+    navigator.clipboard.writeText(formattedText);
+    setNotification("Copied successfully✔️");
+    setTimeout(() => setNotification(""), 1000); // Clear notification after 1 second
+  } else {
+    setNotification("No text to copy❌");
+    setTimeout(() => setNotification(""), 1000); // Clear notification after 1 second
+  }
+};
 
   // Count the number of lines in the input text
   const lineCount = inputText.trim().split("\n").filter(line => line.trim()).length;

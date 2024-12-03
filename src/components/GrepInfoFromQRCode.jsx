@@ -117,11 +117,17 @@ const GrepInfoFromQRCode = () => {
   };
 
   // Copy formatted text to clipboard and show notification
-  const handleCopyToClipboard = () => {
+// Copy formatted text to clipboard and show notification
+const handleCopyToClipboard = () => {
+  if (formattedText && formattedText.trim() !== "") {
     navigator.clipboard.writeText(formattedText);
     setNotification("Copied successfully✔️");
     setTimeout(() => setNotification(""), 1000); // Clear notification after 1 second
-  };
+  } else {
+    setNotification("No text to copy❌");
+    setTimeout(() => setNotification(""), 1000); // Clear notification after 1 second
+  }
+};
 
   // Count the number of non-empty lines in the input text
   const lineCount = inputText.trim().split("\n").filter((line) => line.trim()).length;
