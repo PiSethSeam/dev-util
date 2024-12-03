@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { LuQuote } from "react-icons/lu";
 
 const SuroundValueBySingleQuote = () => {
   const [inputText, setInputText] = useState(""); // Stores raw input
@@ -43,9 +44,13 @@ const handleCopyToClipboard = () => {
 
   return (
     <div 
-                  data-aos="fade-up"
-              data-aos-offset="100"
+    data-aos="fade-up"
+    data-aos-offset="100"
     className="relative flex flex-col items-center">
+      <label className="absolute -top-10 left-10 flex gap-4">
+        <LuQuote size={30}/>
+        Surround value by single quote
+      </label>
       {/* Notification display */}
       {notification && (
         <div className="absolute p-4 rounded-md dark:light-mode dark-mode  text-center w-fit top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
