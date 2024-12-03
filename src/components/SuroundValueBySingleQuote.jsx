@@ -1,14 +1,22 @@
 import React, { useState } from "react";
 
-const Content = () => {
+const SuroundValueBySingleQuote = () => {
   const [inputText, setInputText] = useState(""); // Stores raw input
   const [formattedText, setFormattedText] = useState(""); // Stores formatted result
   const [notification, setNotification] = useState(""); // Notification message
 
   const formatText = (input) => {
+    if (!input) {
+      return ''; // Return an empty string if input is null or empty
+    }
+  
     return input
       .split("\n")
-      .map((line) => `'${line.trim()}'`) // Trim whitespace and add quotes
+      .map((line) => {
+        const trimmedLine = line.trim();
+        return trimmedLine ? `'${trimmedLine}'` : null; // Only add quotes if the line is not empty
+      })
+      .filter(line => line !== null) // Filter out any null values (empty lines)
       .join(",\n"); // Join with commas and newlines
   };
 
@@ -28,7 +36,10 @@ const Content = () => {
   const lineCount = inputText.trim().split("\n").filter(line => line.trim()).length;
 
   return (
-    <div className="relative flex flex-col items-center">
+    <div 
+                  data-aos="fade-up"
+              data-aos-offset="100"
+    className="relative flex flex-col items-center">
       {/* Notification display */}
       {notification && (
         <div className="absolute p-4 rounded-md dark:light-mode dark-mode  text-center w-fit top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
@@ -63,4 +74,4 @@ const Content = () => {
   );
 };
 
-export default Content;
+export default SuroundValueBySingleQuote;

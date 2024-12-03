@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 const { BakongKHQR } = require("bakong-khqr");
 
-const Content2 = () => {
+const GrepInfoFromQRCode = () => {
   const [inputText, setInputText] = useState(""); // Stores raw input
   const [formattedText, setFormattedText] = useState(""); // Stores formatted result
   const [notification, setNotification] = useState(""); // Notification message
@@ -127,7 +127,10 @@ const Content2 = () => {
   const lineCount = inputText.trim().split("\n").filter((line) => line.trim()).length;
 
   return (
-    <div className="relative flex flex-col items-center">
+    <div 
+                  data-aos="fade-up"
+              data-aos-offset="100"
+    className="relative flex flex-col items-center">
       {/* Notification display */}
       {notification && (
         <div className="absolute p-4 rounded-md dark:light-mode dark-mode text-center w-fit top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
@@ -164,4 +167,4 @@ const Content2 = () => {
   );
 };
 
-export default Content2;
+export default GrepInfoFromQRCode;
