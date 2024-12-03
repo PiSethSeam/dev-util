@@ -7,14 +7,14 @@ const menus = [
     {
       id: 1,
       src: <BsQrCodeScan size={150}/>,
-      title: "Grep Info From QRCode",
-      page: "/dev-util/GrepInfoFromQRCode",
+      title: "Extract information from the QR code",
+      page: "/dev-util/ExtractInformationFromQRCode",
     },
     {
       id: 2,
       src: <LuQuote size={150}/>,
-      title: "Suround Value By Single Quote",
-      page: "/dev-util/SuroundValueBySingleQuote",
+      title: "Enclose the value in single quotes",
+      page: "/dev-util/EncloseValueInSngleQuotes",
     }
   ];
 
@@ -33,7 +33,7 @@ const Home = () => {
                   to={page}
                   class="bg-white bg-opacity-5 rounded-2xl px-4 py-2 flex flex-col items-center group relative overflow-hidden transition duration-700 ease-in-out border-transparent border-2 hover:border-white dark:hover:bg-opacity-20 hover:bg-opacity-25 active:scale-105 active:duration-100"
                 >
-                  <span class="ease absolute right-0 -mt-12 h-72 w-8 translate-x-12 rotate-12 transform bg-white opacity-10 transition-all duration-500 group-hover:-translate-x-64"></span>
+                  <span class="ease absolute right-0 -mt-12 h-72 w-8 translate-x-12 rotate-12 transform bg-white opacity-10 transition-all duration-500 group-hover:-translate-x-96"></span>
                   <span class="flex flex-col items-center gap-4">
                   {src}
                     <p className="text-center">{title}</p>

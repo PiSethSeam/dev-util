@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { LuQuote } from "react-icons/lu";
 
-const SuroundValueBySingleQuote = () => {
+const EncloseValueInSngleQuotes = () => {
   const [inputText, setInputText] = useState(""); // Stores raw input
   const [formattedText, setFormattedText] = useState(""); // Stores formatted result
   const [notification, setNotification] = useState(""); // Notification message
@@ -49,7 +49,7 @@ const handleCopyToClipboard = () => {
     className="relative flex flex-col items-center">
       <label className="absolute -top-10 left-10 flex gap-4">
         <LuQuote size={30}/>
-        Surround value by single quote
+        Enclose the value in single quotes
       </label>
       {/* Notification display */}
       {notification && (
@@ -85,4 +85,4 @@ const handleCopyToClipboard = () => {
   );
 };
 
-export default SuroundValueBySingleQuote;
+export default EncloseValueInSngleQuotes;

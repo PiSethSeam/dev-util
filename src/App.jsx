@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import TopBar from "./components/TopBar"
-import GrepInfoFromQRCode from './components/GrepInfoFromQRCode'
-import SuroundValueBySingleQuote from './components/SuroundValueBySingleQuote'
+import GrepInfoFromQRCode from './components/ExtractInformationFromQRCode'
+import SuroundValueBySingleQuote from './components/EncloseValueInSngleQuotes'
 import Home from './components/Home'
 import Footer from './components/Footer'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -27,8 +27,8 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             <Route path="/dev-util" element={<Home />} />
-            <Route path="/dev-util/GrepInfoFromQRCode" element={<GrepInfoFromQRCode />} />
-            <Route path="/dev-util/SuroundValueBySingleQuote" element={<SuroundValueBySingleQuote />} />
+            <Route path="/dev-util/ExtractInformationFromQRCode" element={<GrepInfoFromQRCode />} />
+            <Route path="/dev-util/EncloseValueInSngleQuotes" element={<SuroundValueBySingleQuote />} />
           </Routes>
         </BrowserRouter>
         </div>
