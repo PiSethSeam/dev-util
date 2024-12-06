@@ -8,13 +8,13 @@ const menus = [
       id: 1,
       src: <BsQrCodeScan size={150}/>,
       title: "Extract information from the QR code",
-      page: "/dev-util/ExtractInformationFromQRCode",
+      page: "ExtractInformationFromQRCode",
     },
     {
       id: 2,
       src: <LuQuote size={150}/>,
       title: "Enclose the value in single quotes",
-      page: "/dev-util/EncloseValueInSingleQuotes",
+      page: "EncloseValueInSingleQuotes",
     }
   ];
 
