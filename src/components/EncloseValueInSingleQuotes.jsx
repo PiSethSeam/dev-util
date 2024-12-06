@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { LuQuote } from "react-icons/lu";
 
-const EncloseValueInSngleQuotes = () => {
+const EncloseValueInSingleQuotes = () => {
   const [inputText, setInputText] = useState(""); // Stores raw input
   const [formattedText, setFormattedText] = useState(""); // Stores formatted result
   const [notification, setNotification] = useState(""); // Notification message
@@ -85,4 +85,4 @@ const handleCopyToClipboard = () => {
   );
 };
 
-export default EncloseValueInSngleQuotes;
+export default EncloseValueInSingleQuotes;

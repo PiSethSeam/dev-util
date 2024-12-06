@@ -14,7 +14,7 @@ const menus = [
       id: 2,
       src: <LuQuote size={150}/>,
       title: "Enclose the value in single quotes",
-      page: "/dev-util/EncloseValueInSngleQuotes",
+      page: "/dev-util/EncloseValueInSingleQuotes",
     }
   ];
 

@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import TopBar from "./components/TopBar"
-import GrepInfoFromQRCode from './components/ExtractInformationFromQRCode'
-import SuroundValueBySingleQuote from './components/EncloseValueInSngleQuotes'
+import ExtractInformationFromQRCode from './components/ExtractInformationFromQRCode'
+import EncloseValueInSingleQuotes from './components/EncloseValueInSingleQuotes'
 import Home from './components/Home'
 import Footer from './components/Footer'
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -24,13 +24,20 @@ const App = () => {
     <div>
       <TopBar />
         <div>
-        <BrowserRouter>
+          <Router>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/EncloseValueInSngleQuotes" element={<EncloseValueInSingleQuotes />} />
+              <Route path="/CaptureValueInSingleQuotes" element={<CaptureValueInSingleQuotes />} />
+            </Routes>
+          </Router>
+        {/* <BrowserRouter>
           <Routes>
             <Route path="/dev-util" element={<Home />} />
-            <Route path="/dev-util/ExtractInformationFromQRCode" element={<GrepInfoFromQRCode />} />
-            <Route path="/dev-util/EncloseValueInSngleQuotes" element={<SuroundValueBySingleQuote />} />
+            <Route path="/dev-util/ExtractInformationFromQRCode" element={<ExtractInformationFromQRCode />} />
+            <Route path="/dev-util/EncloseValueInSingleQuotes" element={<EncloseValueInSingleQuotes />} />
           </Routes>
-        </BrowserRouter>
+        </BrowserRouter> */}
         </div>
       <Footer className='max-sm:hidden' />
     </div>
